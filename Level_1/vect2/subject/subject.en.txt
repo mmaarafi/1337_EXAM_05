@@ -1,5 +1,5 @@
 Assignment name: vect2
-Expected files: vect2.cpp vect2.hpp
+Expected files: =
 
 Create a class vect2 representing a mathematical vector of dimension 2 to containing ints.
 
