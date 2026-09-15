@@ -5,11 +5,13 @@
 class set
 {
 	public :
-		set(const searchable_bag &obj);
-		void insert (int);
-		void insert (int *, int);
+		set(searchable_bag &obj);
+		void insert (int n);
+		void insert (int *array, int size);
 		void print() const;
 		void clear();
 		bool has(int x) const;
 		searchable_bag &get_bag();
+	private:
+		searchable_bag &_obj;
 };
