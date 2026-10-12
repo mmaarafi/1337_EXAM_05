@@ -1,17 +1,17 @@
 #pragma once
 
+#include "bag.hpp"
 #include "searchable_bag.hpp"
 
-class set
-{
+class set {
 	public :
 		set(searchable_bag &obj);
-		void insert (int n);
-		void insert (int *array, int size);
-		void print() const;
-		void clear();
-		bool has(int x) const;
+		virtual void insert (int n);
+		virtual void insert (int *array, int size);
+		virtual void print() const;
+		virtual void clear();
+		virtual bool has(int n) const;
 		searchable_bag &get_bag();
 	private:
-		searchable_bag &_obj;
+		searchable_bag &bag;
 };

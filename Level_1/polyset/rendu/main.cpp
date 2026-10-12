@@ -1,15 +1,15 @@
 #include "searchable_bag.hpp"
+
+#include <iostream>
 #include "searchable_array_bag.hpp"
 #include "searchable_tree_bag.hpp"
 #include "set.hpp"
 
-#include <iostream>
-
 int main(int argc, char **argv) {
   if (argc == 1)
     return 1;
-  searchable_bag *a = new searchable_array_bag;
   searchable_bag *t = new searchable_tree_bag;
+  searchable_bag *a = new searchable_array_bag;
 
   for (int i = 1; i < argc; i++) {
     t->insert(atoi(argv[i]));
@@ -30,7 +30,7 @@ int main(int argc, char **argv) {
 
   const searchable_array_bag tmp(static_cast<searchable_array_bag &>(*a));
   tmp.print();
-  std::cout << tmp.has(1) << std::endl;
+  tmp.has(1);
 
   set sa(*a);
   set st(*t);
@@ -43,9 +43,10 @@ int main(int argc, char **argv) {
     sa.get_bag().print();
     st.print();
     sa.clear();
-    int tmp_arr[] = {1, 2, 3, 4};
-    sa.insert(tmp_arr, 4);
+    int values[] = {1, 2, 3, 4};
+    sa.insert(values, 4);
     std::cout << std::endl;
   }
+
   return 0;
 }

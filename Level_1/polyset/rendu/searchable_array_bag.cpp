@@ -1,26 +1,23 @@
 #include "searchable_array_bag.hpp"
 
 searchable_array_bag::searchable_array_bag() {}
+
 searchable_array_bag::searchable_array_bag(const searchable_array_bag &obj): array_bag(obj) {}
 
-searchable_array_bag &searchable_array_bag::operator=(const searchable_array_bag &obj)
+searchable_array_bag &searchable_array_bag::operator=(const searchable_array_bag &other)
 {
-	if (this == &obj)
+	if (this == &other)
 		return (*this);
-	this->array_bag::operator=(obj);
+	this->array_bag::operator=(other);
 	return (*this);
 }
 
 searchable_array_bag::~searchable_array_bag() {}
 
-bool searchable_array_bag::has(int x) const
+bool searchable_array_bag::has(int n) const
 {
-	int i = 0;
-	while (i < this->size)
-	{
-		if (x == (*this).data[i])
+	for (int i = 0; i < this->size; i++)
+		if (this->data[i] == n)
 			return (true);
-		i++;
-	}
 	return (false);
 }

@@ -1,7 +1,7 @@
 Life:
 
 Submitted files: *.c, *.h
-Allowed functions: atoi, read, putvhar, malloc, calloc, realloc, free
+Allowed functions: atoi, read, putchar, malloc, calloc, realloc, free
 
 Prototype of program: ./life width height iterations
 

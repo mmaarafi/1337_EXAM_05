@@ -10,12 +10,12 @@ array_bag::array_bag(const array_bag &oth) {
 	this->size = oth.size;
 }
 
-array_bag &array_bag::operator=(const array_bag &oth) {
+array_bag &array_bag::operator=(const array_bag &other) {
 	this->clear();
-	this->data = new int[oth.size];
-	for (int i = 0; i < oth.size; i++)
-		this->data[i] = oth.data[i];
-	this->size = oth.size;
+	this->data = new int[other.size];
+	for (int i = 0; i < other.size; i++)
+		this->data[i] = other.data[i];
+	this->size = other.size;
 	return *this;
 }
 
